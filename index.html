@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular QuickStart</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script src="app/plugin/controls/wijmo.min.js"></script>
+    <script src="app/plugin/controls/wijmo.grid.min.js"></script>
+    <script src="app/plugin/controls/wijmo.chart.min.js"></script>
+    <script src="app/plugin/controls/wijmo.input.min.js"></script>
+    <script src="app/plugin/controls/wijmo.gauge.min.js"></script>
+    <link href="app/plugin/styles/wijmo.min.css" rel="stylesheet"/>
+    <link href="app/plugin/styles/themes/wijmo.theme.dark.css" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <!-- Wijmo Angular 2 components -->
+    <script src="app/plugin/interop/angular2/wijmo.angular2.min.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body style="top:0px;padding: 0px;margin: 0px">
+  <div  class="wj-header">myHeader</div>
+    <my-app>Loading AppComponent content here ...</my-app>
+  </body>
+</html>

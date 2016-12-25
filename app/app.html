@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="panel-group hidden-xs hidden-sm" id="accordion" >
+        <div *ngFor="let item of routTree, let index = index"
+             class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" [href]="'#' + item.section" target="_self">
+                {{ item.name }}
+              </a>
+            </h4>
+          </div>
+          <div [id]="item.section" class="panel-collapse collapse" [ngClass]="{ in: index == 0 }">
+            <div class="panel-body">
+              <ul class="flatList">
+                <template ngFor let-route [ngForOf]="item.routes">
+                  <li *ngIf="route.data?.caption">
+                    <a [routerLink]="route.path" routerLinkActive="active">
+                      {{route.data.caption}}
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-10" >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

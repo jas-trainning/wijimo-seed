@@ -1,0 +1,73 @@
+<div>
+<!--<wj-flex-grid #flex >-->
+  <!--<wj-flex-grid-column header="'ID'"></wj-flex-grid-column>-->
+  <!--<wj-flex-grid-column header="'Country'" ></wj-flex-grid-column>-->
+  <!--<wj-flex-grid-column header="'Product'"></wj-flex-grid-column>-->
+  <!--<wj-flex-grid-column header="'Color'"></wj-flex-grid-column>-->
+  <!--<wj-flex-grid-column header="'Amount'" ></wj-flex-grid-column>-->
+<!--</wj-flex-grid>-->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body" style="color:$opc">
+          ...反对反对法
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row well app-filter" ng-init="ctx.pageSize=10">
+      <div class="col-sm-6 col-xs-12 app-nopad">
+        Current Page:
+      </div>
+      <div class="col-sm-6 col-xs-12 app-nopad">
+        &nbsp;
+      </div>
+      <div class="col-sm-6 col-xs-12 app-nopad">
+        <!-- page navigator -->
+        <wj-collection-view-pager [cv]="flex?.collectionView"></wj-collection-view-pager>
+      </div>
+      <div class="col-sm-6 col-xs-12 app-nopad">
+        <!-- page size -->
+        <wj-menu [(value)]="pageSize" [header]="'Page Size'">
+          <wj-menu-item [value]="0">No Paging</wj-menu-item>
+          <wj-menu-item [value]="5">5 items</wj-menu-item>
+          <wj-menu-item [value]="10">10 items</wj-menu-item>
+          <wj-menu-item [value]="20">20 items</wj-menu-item>
+          <wj-menu-item [value]="30">30 items</wj-menu-item>
+          <wj-menu-item [value]="50">50 items</wj-menu-item>
+          <wj-menu-item [value]="100">100 items</wj-menu-item>
+        </wj-menu>
+      </div>
+    </div>
+  </div>
+  <wj-flex-grid [itemsSource]="data">
+    <wj-flex-grid-column [header]="'用户名'" [binding]="'country'" [width]="'*'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'姓名'" [binding]="'country'" [width]="'*'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'年龄'" [binding]="country" [width]="'*'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'性别'" [binding]="country" [width]="'*'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'籍贯'" [binding]="country" [width]="'*'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'工作城市'" [binding]="country" [width]="'*'"></wj-flex-grid-column>
+
+  </wj-flex-grid>
+  <wj-menu [header]="'Tax'" [(value)]="tax">
+    <wj-menu-item [value]="0">Exempt</wj-menu-item>
+    <wj-menu-item [value]=".05">5%</wj-menu-item>
+    <wj-menu-item [value]=".15">15%</wj-menu-item>
+  </wj-menu>
+</div>
